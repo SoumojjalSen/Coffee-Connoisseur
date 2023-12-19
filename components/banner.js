@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './static_css/banner.module.css'
+import styles from './static_css/Banner.module.css'
 import { Pattaya } from 'next/font/google'
 
 const Banner = (props) => { // Props- properties to make the button configurable
