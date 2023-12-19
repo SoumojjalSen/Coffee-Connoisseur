@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./static_css/Banner.module.css";
 import Image from "next/image";
-import { Pattaya } from "next/font/google";
+import { Pattaya, Rubik } from "next/font/google";
 
 const pattaya = Pattaya({ subsets: ["latin"], display: "swap", weight: "400" });
+const rubik = Rubik({subsets: ["latin"],display: "swap",weight: "400" });
 
 const Banner = (props) => {
   return (
@@ -15,7 +16,9 @@ const Banner = (props) => {
             <span className={styles.title2}>Connoisseur</span>
           </div>
         </div>
-        <p className={styles.subTitle}>Discover your local coffee shops</p>
+        <div className={rubik.className}>
+          <p className={styles.subTitle}>Discover your local coffee shops</p>
+        </div>
         <div className={styles.buttonWrapper}>
           <button className={styles.button} onClick={props.handleOnClick}>
             {props.buttonText}
