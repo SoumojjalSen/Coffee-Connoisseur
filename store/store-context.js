@@ -1,6 +1,5 @@
 import { createContext, useReducer } from "react";
 
-// The context once initailaised is available to all the page
 export const StoreContext = createContext();
 
 export const ACTION_TYPES = {
@@ -9,7 +8,6 @@ export const ACTION_TYPES = {
 };
 
 const storeReducer = (state, action) => {
-  console.log(state);
   switch (action.type) {
     case ACTION_TYPES.SET_LAT_LONG: {
       return { ...state, latLong: action.payload.latLong };
@@ -23,8 +21,6 @@ const storeReducer = (state, action) => {
 };
 
 const StoreProvider = ({ children }) => {
-  // const [isOpen, setIsOpen] = useState();
-
   const initialState = {
     latLong: "",
     coffeeStores: [],
@@ -34,8 +30,6 @@ const StoreProvider = ({ children }) => {
 
   return (
     <StoreContext.Provider value={{ state, dispatch }}>
-      {" "}
-      {/* default state */}
       {children}
     </StoreContext.Provider>
   );
