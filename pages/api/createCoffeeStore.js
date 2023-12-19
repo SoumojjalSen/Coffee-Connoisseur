@@ -1,26 +1,14 @@
-// localhost:3000/api/createCoffeeStore
-// Entering new entry in the table
-// EXAMPLE USING CUSTOM CONFIGURATION
-
 import { table, getMinifiedRecords, findRecordByFilter } from "@/lib/airtable";
 
 const createCoffeeStore = async (req, res) => {
-  console.log({ req });
   if (req.method === "POST") {
     try {
       // find a record
-      const {
-        id,
-        name,
-        address,
-        full_address,
-        votes,
-        imgUrl,
-      } = req.body;
+      const { id, name, address, full_address, votes, imgUrl } = req.body;
 
-      if(id){
+      if (id) {
         const record = await findRecordByFilter(id);
-        
+
         if (record.length !== 0) {
           res.json(record);
         } else {
@@ -41,15 +29,14 @@ const createCoffeeStore = async (req, res) => {
 
             const records = getMinifiedRecords(createRecord);
             res.json({ message: "Record is created", records: records });
-          }
-          else{
+          } else {
             req.status(400);
             res.json({ message: "Name is missing" });
           }
         }
       } else {
         res.json({ message: "Id is missing" });
-      }     
+      }
     } catch (err) {
       console.error("Error finding or creating store : ", err);
       res.status(500);

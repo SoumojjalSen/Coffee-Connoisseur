@@ -12,22 +12,20 @@ const upvoteCoffeeStoreById = async (req, res) => {
 
           const calculateUpvote = parseInt(record.votes) + 1;
 
-          console.log("calculateVoting", {calculateUpvote})
-
           //update a record
           const updateRecord = await table.update([
             {
               id: record.recordId,
               fields: {
                 votes: calculateUpvote,
-              }
-            }
+              },
+            },
           ]);
 
-          if(updateRecord){
+          if (updateRecord) {
             const minifiedRecord = getMinifiedRecords(updateRecord);
 
-            res.json(minifiedRecord)
+            res.json(minifiedRecord);
           }
 
           res.json(recordArray);

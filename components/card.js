@@ -4,7 +4,7 @@ import Link from 'next/link'
 import styles from './static_css/Card.module.css'
 import ClassNames from 'classnames'
 
-const Card = (props) => { // props to make it configurable
+const Card = (props) => { 
   return (
     <Link href={props.href} className={styles.cardLink}>
       <div className={ClassNames("glass", styles.container)}>
