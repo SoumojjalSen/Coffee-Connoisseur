@@ -1,5 +1,22 @@
+.super_container {
+  height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.heroImage {
+  position: relative;
+  height: 400px;
+  width: 400px;
+  z-index: 1;
+  margin: 0px;
+  padding: 0px;
+  margin-left: auto;
+}
+
 .container {
   margin-bottom: 5rem;
+  margin-right: auto;
 }
 
 .title {
@@ -67,6 +84,8 @@
   }
 }
 
+
+
 @media (min-width: 768px) {
   .title {
     font-size: 3.75rem;
@@ -84,6 +103,25 @@
     line-height: 1.75rem;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+}
+
+@media (max-width: 818px) {
+  .heroImage {
+    height: 300px;
+    width: 300px;
+  }
+}
+@media (max-width: 732px) {
+  .heroImage {
+    height: 250px;
+    width: 250px;
+  }
+}
+@media (max-width: 590px) {
+  .heroImage {
+    height: 0px;
+    width: 0px;
   }
 }
 
@@ -113,4 +151,3 @@
     display: inline;
   }
 }
-

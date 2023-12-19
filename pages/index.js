@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Banner from "@/components/banner";
@@ -74,14 +73,6 @@ export default function Home(props) {
           handleOnClick={handleOnButtonClick}
         />
         {locationErrorMsg && <p>Something went wrong: {locationErrorMsg}</p>}
-        <div className={styles.heroImage}>
-          <Image
-            src="/static/Hero-image.png"
-            priority
-            fill
-            alt="coffee shop photo"
-          />
-        </div>
 
         {storesNearMeError && <p>Something went wrong: {storesNearMeError}</p>}
         {coffeeStoresNearMe.length > 0 && (
