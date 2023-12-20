@@ -30,7 +30,7 @@ const Banner = (props) => {
           src="/static/Hero-image.png"
           priority
           fill
-          alt="coffee shop photo"
+          alt="hero image"
         />
       </div>
     </div>
